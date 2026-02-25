@@ -4,6 +4,34 @@ This Git repo contains free buy/sell strategies for [Freqtrade](https://github.c
 
 All strategies should work with a freqtrade version of 2022.4 or newer.
 
+
+## Quick Start
+
+### Prerequisites
+
+- Python 3.10+
+- [TA-Lib C library](https://github.com/TA-Lib/ta-lib-python#dependencies) (required by many strategies)
+
+### Install with uv (Recommended)
+
+[uv](https://docs.astral.sh/uv/) is a fast Python package manager. Install all dependencies with one command:
+
+```bash
+# Install uv (if not installed)
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Clone the repo and install dependencies
+git clone https://github.com/freqtrade/freqtrade-strategies.git
+cd freqtrade-strategies
+uv sync
+```
+
+After installation, you can run a strategy:
+
+```bash
+freqtrade trade --strategy Strategy001
+```
+
 ## Disclaimer
 
 These strategies are for educational purposes only. Do not risk money 
@@ -21,14 +49,23 @@ bot.
 
 ## Table of Content
 
-- [Free trading strategies](#free-trading-strategies)
-- [Contribute](#share-your-own-strategies-and-contribute-to-this-repo)
-- [FAQ](#faq)
+- [Freqtrade strategies](#freqtrade-strategies)
+  - [Quick Start](#quick-start)
+    - [Prerequisites](#prerequisites)
+    - [Install with uv (Recommended)](#install-with-uv-recommended)
+  - [Disclaimer](#disclaimer)
+  - [Table of Content](#table-of-content)
+  - [Free trading strategies](#free-trading-strategies)
+  - [Share your own strategies and contribute to this repo](#share-your-own-strategies-and-contribute-to-this-repo)
+  - [FAQ](#faq)
     - [What is Freqtrade?](#what-is-freqtrade)
     - [What includes these strategies?](#what-includes-these-strategies)
     - [How to install a strategy?](#how-to-install-a-strategy)
     - [How to test a strategy?](#how-to-test-a-strategy)
-    - [How to create/optimize a strategy?](https://www.freqtrade.io/en/latest/strategy-customization/)
+      - [Simple backtesting](#simple-backtesting)
+      - [Refresh your test data](#refresh-your-test-data)
+
+
 
 ## Free trading strategies
 
@@ -79,11 +116,11 @@ Best backtest multiple strategies with the exchange and pairs you're interrested
 
 ### How to install a strategy?
 
-First you need a [working Freqtrade](https://freqtrade.io).
+First you need a [working Freqtrade](https://freqtrade.io). You can quickly set up the environment using the [Quick Start](#quick-start) guide above.
 
 Once you have the bot on the right version, follow this steps:
 
-1. Select the strategy you want. All strategies of the repo are into 
+1. Select the strategy you want. All strategies of the repo are into
 [user_data/strategies](https://github.com/freqtrade/freqtrade-strategies/tree/main/user_data/strategies)
 2. Copy the strategy file
 3. Paste it into your `user_data/strategies` folder
