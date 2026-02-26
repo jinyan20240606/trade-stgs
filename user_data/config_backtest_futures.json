@@ -34,8 +34,12 @@
         "name": "gateio",
         "key": "",
         "secret": "",
-        "ccxt_config": {},
-        "ccxt_async_config": {},
+        "ccxt_config": {
+            "timeout": 60000
+        },
+        "ccxt_async_config": {
+            "timeout": 60000
+        },
         "pair_whitelist": [
             "BTC/USDT:USDT",
             "ETH/USDT:USDT",
